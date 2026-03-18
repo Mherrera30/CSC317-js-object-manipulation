@@ -1,14 +1,30 @@
-const sculptureList = require('./data.js'); // import data.js
 
 
-const element = sculptureList[0] // <---- comment out this line in your solution!
+const sculptureList = require('./data.js');     // Import data.js
+
+const sculptureListLengths = [];
 
 
+for (const sculpture of sculptureList) {
+    
+    let lengthsObject = {}; 
 
+    for (const key in sculpture) {
+        
+        const valueLength = sculpture[key].length;
 
-// this following snippet is just to show how to iterate an object's keys
-// comment this out in your solution!
-for (const key in element){
-    console.log(`${key}: ${element[key].length}`)
+        Object.assign(lengthsObject, { [key]: valueLength});
+    }
+    sculptureListLengths.push(lengthsObject);
 }
+
+console.log(sculptureListLengths);
+
+
+
+
+
+
+
+
 
